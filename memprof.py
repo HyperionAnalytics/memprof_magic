@@ -138,7 +138,6 @@ class LineProfiler(object):
     def add_function(self, func):
         """Record line profiling information for the given Python function."""
         try:
-            # func_code does not exist in Python3
             code = func.__code__
         except AttributeError:
             warnings.warn("Could not extract a code object for the object %r" % func)
@@ -185,9 +184,7 @@ class LineProfiler(object):
         if (event in ('call', 'line', 'return')
                 and frame.f_code in self.code_map):
             if event != 'call':
-                # "call" event just saves the lineno but not the memory
                 mem = get_memory(-1, include_children=self.include_children)
-                # if there is already a measurement for that line get the max
                 old_mem = self.code_map[frame.f_code].get(self.prevline, 0)
                 self.code_map[frame.f_code][self.prevline] = max(mem, old_mem)
             self.prevline = frame.f_lineno
@@ -211,7 +208,7 @@ class LineProfiler(object):
 
 @magics_class
 class MemProf(Magics):
-    """IPython magic to to memory profile a function line by line."""
+    """IPython magic to memory profile a function line by line."""
     @magic_arguments()
     @argument('-f', '--function', type=str, help='function to evaluate: string')
     @argument('-p', '--precision', type=int, help='set number of decimal places: integer')
