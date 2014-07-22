@@ -18,7 +18,7 @@ Usage:
 
 arguments:
 
-  -f FUNCTION,  --function AUTHOR        string to evaluate function call
+  -f FUNCTION,  --function FUNCTION      string to evaluate function call
   -p PRECISION, --precision PRECISION    integer to set number of decimal places in resuts
 
 Examples:
