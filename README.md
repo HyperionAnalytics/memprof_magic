@@ -4,15 +4,21 @@ memprof IPython Notebook magic is based on [memory_prifiler](https://github.com/
 
 ### Installation
 
+```python
 %install_ext https://raw.githubusercontent.com//HyperionAnalytics/memprof_magic/master/memprof.py
+```
 
 ### Load the magic into the notebook
 
+```python
 %load_ext memprof
+```
 
 ### Usage
 
+```python
 %memprof?
+```
 
 ### Example
 
