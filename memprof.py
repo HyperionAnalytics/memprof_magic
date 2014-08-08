@@ -87,7 +87,7 @@ def format_results(prof, fcn_eval, precision=1):
             continue
 
         b = inspect.getsource(fcn_eval)
-        all_lines = b.splitlines(keepends=True)
+        all_lines = b.splitlines(True)
         sub_lines = inspect.getblock(all_lines[code.co_firstlineno - 1:])
         linenos = range(code.co_firstlineno,
                         code.co_firstlineno + len(sub_lines))
