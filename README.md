@@ -1,6 +1,6 @@
 ### IPython Notebook magic for function line-by-line memory profiling
 
-memprof IPython Notebook magic is based on [memory_prifiler](https://github.com/fabianp/memory_profiler) by Fabian Pedregosa.
+memprof IPython Notebook magic is based on [memory_profiler](https://github.com/fabianp/memory_profiler) by Fabian Pedregosa.
 
 ### Installation
 
